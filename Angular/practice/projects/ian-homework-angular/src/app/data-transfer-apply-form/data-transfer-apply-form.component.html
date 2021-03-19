@@ -1,0 +1,93 @@
+<div class="container-fluid"> 
+
+    <div class="table-responsive"> 
+
+        <div class="table-wrapper">          
+            <br/>
+            <div class="table-title"> 
+
+                <div class="row"> 
+
+                    <div class="col-sm-4"> 
+
+                        <div class="show-entries"> 
+
+                            <span>Choose Environment</span> 
+
+                            &nbsp;   
+
+                            <select (change)="onChange($event)" >   
+                                <option *ngFor="let env of envList|keyvalue" [value]="env.key" > {{env.value}}</option> 
+                            </select> 
+                        </div>                       
+
+                    </div> 
+                     
+                    <div class="col-sm-4"> 
+
+                        <h3>Environment List ({{getEnvType(mode)}})</h3> 
+
+                    </div> 
+  
+
+                </div> 
+
+            </div> 
+            <br/>
+            <table class="table table-bordered"> 
+
+                <thead class="table-info"> 
+
+                    <tr>
+
+                        <th>From-HostName </th> 
+
+                        <th>From-IP</th> 
+
+                        <th>To-HostName</th> 
+
+                        <th>To-IP</th> 
+
+                        <th>Port(s)</th> 
+
+                        <th>用途</th> 
+
+                        <th>狀態</th>
+
+                        <th>電子需求單</th>
+
+                    </tr> 
+
+                </thead> 
+
+                <tbody> 
+                    <tr *ngFor="let item of service.list"> 
+                        <td>{{item.fromHostName}}</td>
+                        <td>{{item.fromIP}}</td>
+                        <td>{{item.toHostName}}</td>
+                        <td>{{item.toIP}}</td>
+                        <td>{{item.ports}}</td>
+                        <td>{{item.purpose}}</td>
+                        <td>{{item.status}}</td>
+                        <td>{{item.requirementSerialNumber}}</td> 
+                    </tr> 
+                </tbody> 
+
+            </table> 
+
+            <div class="clearfix"> 
+
+ 
+
+            </div> 
+
+        </div> 
+
+    </div>         
+
+</div> 
+
+ 
+ 
+
+ 
